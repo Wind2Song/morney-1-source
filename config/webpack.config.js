@@ -349,6 +349,7 @@ module.exports = function (webpackEnv) {
           // match the requirements. When no loader matches it will fall
           // back to the "file" loader at the end of the loader list.
           oneOf: [
+            
             // TODO: Merge this config once `image/avif` is in the mime-db
             // https://github.com/jshttp/mime-db
             {
@@ -360,6 +361,13 @@ module.exports = function (webpackEnv) {
                   maxSize: imageInlineSizeLimit,
                 },
               },
+            },
+            {
+              test: /\.svg$/,
+              use: [
+                { loader: 'svg-sprite-loader', options: {} },
+                {loader:'svgo-loader', options: {}}
+              ]
             },
             // "url" loader works like "file" loader except that it embeds assets
             // smaller than specified limit in bytes as data URLs to avoid requests.
