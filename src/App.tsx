@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import styled from 'styled-components';
+import Money from 'views/Money';
 // import Button from 'components/Button'
 import Nav from './components/Nav';
 import {
@@ -57,13 +57,6 @@ function Tags() {
   )
 }
 
-function Money() {
-  return (
-    <Layout>
-        <h2>记账页面</h2>        
-    </Layout>
-  )
-}
 
 function Statistics() {
   return (
