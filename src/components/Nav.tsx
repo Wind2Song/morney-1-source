@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import React from "react";
+import Icon from "./Icon";
 // import  X from 'icons/money.svg';
 // console.log(X) // 使用import必须要有log，否则treeshaking会删除这句子代码；使用require可以避免
-require('icons/money.svg');
-require('icons/tags.svg');
-require('icons/statics.svg');
 
 const NavWrapper = styled.nav`
 line-height: 24px;
@@ -34,21 +32,15 @@ const Nav = ()=>{
         <NavWrapper>
             <ul>
                 <li>
-                <svg className="icon">
-                        <use xlinkHref="#tags"/>
-                </svg>
+                    <Icon name="tags"/>
                     <Link to="/tags">标签页</Link>
                 </li>
                 <li>
-                    <svg className="icon">
-                        <use xlinkHref="#money"/>
-                    </svg>
+                    <Icon name="money"/>
                     <Link to="/money">记账页</Link>
                 </li>
                 <li>
-                    <svg className="icon">
-                        <use xlinkHref="#statics"/>
-                    </svg>
+                    <Icon name="statics"/>
                     <Link to="/statistics">统计页</Link>
                 </li>
             </ul>
