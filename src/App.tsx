@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 import Money from 'views/Money';
-// import Button from 'components/Button'
-import Nav from './components/Nav';
+import Tags from 'views/Tags';
+import NoMatch from 'views/NoMatch';
+import Statistics from 'views/Statistics';
 import {
   HashRouter as Router,
   Switch,
@@ -10,7 +11,6 @@ import {
 
   Redirect
 } from "react-router-dom";
-import Layout from 'components/Layout';
 
 
 
@@ -40,30 +40,9 @@ function App() {
   );
 }
 
-function NoMatch() {
-  return (
-    <div>
-      <h2>404</h2>
-      宁访问的页面不存在
-    </div>  
-  )
-}
-
-function Tags() {
-  return (
-    <Layout>
-      <h2>标签页面</h2>        
-    </Layout>
-  )
-}
 
 
-function Statistics() {
-  return (
-    <Layout>
-      <h2>统计页面</h2>        
-    </Layout>
-  )
-}
+
+
 
 export default App;
