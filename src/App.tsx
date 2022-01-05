@@ -11,15 +11,16 @@ import {
 
   Redirect
 } from "react-router-dom";
+import styled from 'styled-components'
 
-
-
+const AppWrapper = styled.div`
+color: #333;
+`;
 
 function App() {
   return (
-    <Router>
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+    <AppWrapper>
+      <Router>
           <Switch>
           <Route path="/money">
             <Money />
@@ -35,8 +36,8 @@ function App() {
             <NoMatch />
           </Route>
           </Switch>
-        
-    </Router>
+      </Router>
+    </AppWrapper>
   );
 }
 

@@ -6,6 +6,7 @@ import Icon from "./Icon";
 // console.log(X) // 使用import必须要有log，否则treeshaking会删除这句子代码；使用require可以避免
 
 const NavWrapper = styled.nav`
+background: #ffffff;
 line-height: 24px;
   box-shadow: 0 0 3px 0 rgba(0,0,0,0.25);
   > ul {
