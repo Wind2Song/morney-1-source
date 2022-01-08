@@ -34,6 +34,7 @@ const CategorySection = () => {
         {categoryList.map((c)=>
           <li className={category === c ? 'selected' : ''}
               onClick={()=>{setCategory(c)}}
+              key={c}
             >{categoryMap[c]}
           </li>
         )}
