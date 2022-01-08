@@ -22,7 +22,8 @@ font-size: 14px;
 `;
 const NoteSection:React.FC = ()=>{
   // 受控方式；非受控方式见md截图。
-  const [note,setNote] = useState('');console.log(note)
+  const [note,setNote] = useState('');
+  console.log(note);
   return(
     <Wrapper>
       <label>
