@@ -16,7 +16,7 @@ const GeneratorOutput = (text:string,output='') =>{
             return output + text
           };
         case '.':
-          if(output.indexOf('.') >= 0){return output;}
+          if(output.indexOf('.') >= 0){return output}
           return output+'.'
         case '删除':
           if(output.length === 1){

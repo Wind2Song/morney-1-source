@@ -20,10 +20,14 @@ font-size: 14px;
     }
   }
 `;
-const NoteSection:React.FC = ()=>{
+
+type Props = {
+  value:string,
+  onChange:(value:string)=>void
+}
+const NoteSection:React.FC<Props> = (props)=>{
   // 受控方式；非受控方式见md截图。
-  const [note,setNote] = useState('');
-  console.log(note);
+  const note = props.value;
   return(
     <Wrapper>
       <label>
@@ -32,7 +36,7 @@ const NoteSection:React.FC = ()=>{
           type="Text" 
           placeholder='在这里添加备注' 
           value={note}
-          onChange={(e)=>{setNote(e.target.value)}}
+          onChange={(e)=>{props.onChange(e.target.value)}}
         />
       </label>      
     </Wrapper>
