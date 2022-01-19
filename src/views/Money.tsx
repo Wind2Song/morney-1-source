@@ -5,7 +5,6 @@ import { NoteSection } from 'views/Money/NoteSection';
 import { CategorySection } from 'views/Money/CategorySection';
 import { NumberPadSection } from 'views/Money/NumberPadSection'
 import { useState } from 'react';
-import Tags from './Tags';
 
 const MyLayout = styled(Layout)`
   display:flex;
@@ -18,7 +17,7 @@ function Money() {
     tags: [] as string[],
     note: '',
     category: '-' as Category,
-    amount: 0
+    amount: '0'
   })
     return (
       <MyLayout>

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { GeneratorOutput } from './NumberSection/Generatoroutput';
-import { Wrapper } from "./NumberSection/Wrapper";
+import React from 'react';
+import { generateOutput } from './NumberPadSection/generateOutput';
+import { Wrapper } from "./NumberPadSection/Wrapper";
 
 type Props = {
-  value:number,
-  onChange:(value:number)=>void,
+  value:string,
+  onChange:(value:string)=>void,
   onOK ?: ()=>void
 };
 const NumberPadSection:React.FC<Props> = (props)=>{
@@ -12,11 +12,13 @@ const NumberPadSection:React.FC<Props> = (props)=>{
   const setOutput = (output:string) =>{
     let value
     if(output.length > 16){
-      value = parseFloat(output.slice(0,16));
+      // value = parseFloat(output.slice(0,16)).toString();
+      value = output.slice(0,16)
     }else if(output.length === 0){
-      value = 0;
+      value = '0';
     }else{
-      value = parseFloat(output)
+      // value = parseFloat(output).toString()
+      value = output
     }
     props.onChange(value)
   }
@@ -29,7 +31,8 @@ const NumberPadSection:React.FC<Props> = (props)=>{
       return;
     }
     if('0123456789.'.split('').concat(['删除', '清空']).indexOf(text)>=0){
-      setOutput(GeneratorOutput(text,output))
+      // setOutput(generateOutput(text,output));
+      setOutput(generateOutput(text,output))
     }
   };
   return (
@@ -47,7 +50,7 @@ const NumberPadSection:React.FC<Props> = (props)=>{
         <button>9</button>
         <button className='ok'>OK</button>
         <button className='zero'>0</button>
-        <button className="dot" onClick={()=>console.log('点了')}>.</button>
+        <button className="dot">.</button>
       </div>
     </Wrapper>
   )
