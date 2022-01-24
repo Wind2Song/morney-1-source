@@ -44,3 +44,8 @@ button {
   display: block;
   clear: both;
 }
+.tagline {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
