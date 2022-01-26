@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { createID } from "lib/createID";
+// import { useState } from "react";
 import styled from "styled-components";
 import {useTags} from 'useTags'
 const Wrapper  = styled.section`
@@ -32,7 +33,7 @@ const TagsSection: React.FC<Props> = (props)=>{
   const onAddTag = () =>{
     const tagName = window.prompt('新标签的名字是');
     if((tagName !== null) && (tagName !=='')){
-      setTags([...tags, {id:Math.random(),name:tagName}])
+      setTags([...tags, {id:createID(),name:tagName}])
     }
   };
   // const [selectedTags, setSelectedTags] = useState<string[]>([]);
