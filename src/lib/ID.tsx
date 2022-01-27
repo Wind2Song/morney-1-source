@@ -1,5 +1,3 @@
-import { throws } from "assert";
-
 let id = 0;
 class ID {
     value:number;

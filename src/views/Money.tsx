@@ -21,11 +21,6 @@ function Money() {
   })
     return (
       <MyLayout>
-          {selected.tagIDs}
-          <hr />
-          {selected.note}
-          <hr />
-          {selected.amount}
           <TagsSection value={selected.tagIDs}
                        onChange={(tagIDs)=>setSelected({
                          ...selected,
