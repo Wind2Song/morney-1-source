@@ -56,6 +56,7 @@ const Tag:React.FC = () => {
                     <input 
                       type="Text" 
                       placeholder='标签' 
+                      defaultValue={tag.name}
                     />
                 </Label>
             </div>
