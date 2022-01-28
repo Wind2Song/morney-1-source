@@ -1,6 +1,8 @@
 import { Button } from "components/Button";
+import { Center } from "components/Center";
 import Icon from "components/Icon";
 import Layout from "components/Layout";
+import { Space } from "components/Space";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { useTags } from "useTags";
@@ -57,7 +59,12 @@ const Tag:React.FC = () => {
                     />
                 </Label>
             </div>
-            <Button>删除标签</Button>
+            <Center>
+                <Space />
+                <Space />
+                <Space />
+                <Button>删除标签</Button>
+            </Center>
         </Layout>
     );
 };
