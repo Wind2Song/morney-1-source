@@ -1,3 +1,4 @@
+import { Button } from 'components/Button';
 import Icon from 'components/Icon';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -19,12 +20,6 @@ const TagList = styled.ol`
     }
   }
 `;
-const Button = styled.button`
-  background: #767676; color: white;
-  font-size: 18px; border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-`
 const Center = styled.div`
   display: flex;
   flex-direction: column;
