@@ -39,12 +39,38 @@ type Params = {
     fuck:string, // 这个类型变量名表示路由上/tags/ 后面的名字，这两个名字必须一致
 }
 const Tag:React.FC = () => {
-    const {findTag} = useTags()
+    const {findTag, deleteTag} = useTags()
     const {fuck:idString} = useParams<Params>();
     // 这个类型变量名表示路由上/tags/ 后面的名字，这两个名字必须一致
     // fuck后面的“冒号”表示对fuck重命名
     // const tag = tags.filter(tag => tag.id === parseInt(fuck))[0]
-    const tag = findTag(parseInt(idString))
+    const tag = findTag(parseInt(idString));
+    const TagContent = () => {
+        return(
+            <div>
+                <div>
+                    <Label>
+                        <span>标签名</span>
+                        <input 
+                          type="Text" 
+                          placeholder='标签' 
+                          defaultValue={tag.name}
+                          onChange={(e)=>{
+                              tag.name = e.target.value
+                          }}
+                        />
+                    </Label>
+                </div>
+                <Center>
+                    <Space />
+                    <Space />
+                    <Space />
+                    <Button onClick={()=>deleteTag(tag.id)}>删除标签</Button>
+                </Center>
+            </div>
+        )
+        
+    }
     return (
         <Layout>
             <TopBar>
@@ -52,25 +78,8 @@ const Tag:React.FC = () => {
                 <span>编辑标签</span>
                 <Icon name=""/>
             </TopBar>
-            <div>
-                <Label>
-                    <span>标签名</span>
-                    <input 
-                      type="Text" 
-                      placeholder='标签' 
-                      defaultValue={tag.name}
-                      onChange={(e)=>{
-                          tag.name = e.target.value
-                      }}
-                    />
-                </Label>
-            </div>
-            <Center>
-                <Space />
-                <Space />
-                <Space />
-                <Button>删除标签</Button>
-            </Center>
+
+            {tag? <TagContent />:<Center>tag不存在</Center>}
         </Layout>
     );
 };
