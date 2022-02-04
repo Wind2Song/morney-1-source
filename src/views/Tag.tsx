@@ -3,7 +3,7 @@ import { Center } from "components/Center";
 import Icon from "components/Icon";
 import Layout from "components/Layout";
 import { Space } from "components/Space";
-import { useParams } from "react-router-dom";
+import { useParams,useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { useTags } from "useTags";
 
@@ -69,12 +69,13 @@ const Tag:React.FC = () => {
                 </Center>
             </div>
         )
-        
     }
+    const history = useHistory()
+    const onClickBack = () => {history.goBack()}
     return (
         <Layout>
             <TopBar>
-                <Icon name="left"/>
+                <Icon name="left" onClick={onClickBack}/>
                 <span>编辑标签</span>
                 <Icon name=""/>
             </TopBar>
