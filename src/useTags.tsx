@@ -1,15 +1,39 @@
 import { createID } from "lib/createID";
-import { ID } from "lib/ID";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const defaultTags = [
-    {id:createID(),name:'衣'},
-    {id:createID(),name:'食'},
-    {id:createID(),name:'住'},
-    {id:createID(),name:'行'},
-]
 const useTags = () =>{
-    const [tags, setTags] = useState<{id:number;name:string}[]>(defaultTags);
+    const [tags, setTags] = useState<{id:number;name:string}[]>([]);
+    useEffect(()=>{
+        // console.log('11')
+        let localTags = JSON.parse(window.localStorage.getItem('tags') || '[]')
+        if(localTags.length === 0){
+            localTags = [
+                {id:createID(),name:'衣'},
+                {id:createID(),name:'食'},
+                {id:createID(),name:'住'},
+                {id:createID(),name:'行'},
+            ]
+        }
+        setTags(localTags)
+    },[]) // 组件加载时执行
+    const count = useRef(0)
+    useEffect(()=>{
+        // count.current = 0
+        count.current += 1;
+        console.log('count'+count.current)
+    })
+    useEffect(()=>{
+        if(count.current > 1){
+            console.log('22')
+            window.localStorage.setItem('tags',JSON.stringify(tags))
+        }
+    }, [tags])
+    const addTag = () =>{
+        const tagName = window.prompt('新标签的名字是');
+        if((tagName !== null) && (tagName !=='')){
+          setTags([...tags, {id:createID(),name:tagName}])
+        }
+      };
     const findTag = (id:number) => tags.filter(tag=>id === tag.id)[0];
     const findIndex = (id:number) => {
         let result = -1;
@@ -35,7 +59,7 @@ const useTags = () =>{
         // setTags(tagsClone);
         setTags(tags.filter(tag => tag.id !== id))
     }
-    return {tags, setTags, findTag, deleteTag, updateTag} //
+    return {tags, addTag, setTags, findTag, deleteTag, updateTag} //
 }
 
 export {useTags};
