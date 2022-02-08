@@ -13,7 +13,7 @@ type RecordItem = newRecordItem & {
 const useRecords = () => {
     const [records, setRecords] = useState<RecordItem[]>([]);
     useEffect(()=>{
-        JSON.parse(window.localStorage.getItem('records') || '')
+        setRecords(JSON.parse(window.localStorage.getItem('records') || '[]'))
     },[])
     const addRecords = (newRecord:newRecordItem) => {
         if(newRecord.amount === '0'){
@@ -26,6 +26,7 @@ const useRecords = () => {
         }
         const record = {...newRecord, createdAt: (new Date()).toISOString()}
         setRecords([...records, record]);
+        return true;
     }
 
     useUpdate(()=>{
