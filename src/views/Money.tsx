@@ -23,9 +23,10 @@ function Money() {
   const [selected, setSelected]=useState(defaultFormData)
   const {records, addRecords} = useRecords();
   const submit = () => {
-    addRecords(selected);
-    alert('提交成功');
-    setSelected(defaultFormData)
+    if(addRecords(selected)){
+      alert('提交成功');
+      setSelected(defaultFormData)
+    }    
   }
     return (
       <MyLayout>
