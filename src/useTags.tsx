@@ -1,3 +1,4 @@
+import { useUpdate } from "hooks/useUpdate";
 import { createID } from "lib/createID";
 import { useEffect, useRef, useState } from "react";
 
@@ -15,19 +16,10 @@ const useTags = () =>{
             ]
         }
         setTags(localTags)
-    },[]) // 组件加载时执行
-    const count = useRef(0)
-    useEffect(()=>{
-        // count.current = 0
-        count.current += 1;
-        console.log('count'+count.current)
-    })
-    useEffect(()=>{
-        if(count.current > 1){
-            console.log('22')
-            window.localStorage.setItem('tags',JSON.stringify(tags))
-        }
-    }, [tags])
+    },[]) // 加载时执行
+    useUpdate(()=>{
+        window.localStorage.setItem('tags',JSON.stringify(tags))
+    },[tags])
     const addTag = () =>{
         const tagName = window.prompt('新标签的名字是');
         if((tagName !== null) && (tagName !=='')){
