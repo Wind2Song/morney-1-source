@@ -27,12 +27,9 @@ function Money() {
   const [selected, setSelected]=useState(defaultFormData)
   const {addRecords} = useRecords();
   const submit = () => {
-    console.log('1到了')
     if(addRecords(selected)){
-      console.log('到了')
       alert('提交成功');
       setSelected(defaultFormData);
-      console.log('到了')
     }
   }
     return (

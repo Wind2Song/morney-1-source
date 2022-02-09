@@ -7,8 +7,8 @@ type newRecordItem = {
     category: '+' | '-'
     amount: string
 }
-type RecordItem = newRecordItem & {
-    createdAt:string //ISO
+export type RecordItem = newRecordItem & {
+    createdAt:string //ISO格式，要用dayjs库转换成时间戳格式
 }
 const useRecords = () => {
     const [records, setRecords] = useState<RecordItem[]>([]);
