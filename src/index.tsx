@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import 'yyy/bbb.tsx'
 
-console.log('页面刷新了')
 ReactDOM.render(
   <React.StrictMode>
     <App />

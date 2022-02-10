@@ -56,18 +56,18 @@ function Statistics() {
         <CategorySection value={category}
           onChange={(category)=>setCategory(category)}/>
       </CategoryWrapper>
-      {array.map(([date, records]) => <div>
+      {array.map(([date, records]) => <div key={date}>
         <Header>
           {date}
         </Header>
         <div>
           {records.map(r => {
-            return <Item>
-              <div className='tags'>
-                {r.tagIDs.map(tagID => <span>{getName(tagID)}</span>)}
+            return <Item key={r.createdAt}>
+              <div className='tags' key={r.tagIDs.toString()}>
+                {r.tagIDs.map(tagID => <span key={tagID}>{getName(tagID)}</span>)}
               </div>
-                {r.note && <div className='note'>{r.note}</div>}
-              <div className="amount">
+                {r.note && <div className='note' key={r.note}>{r.note}</div>}
+              <div className="amount" key={r.amount}>
                 ￥{r.amount}
               </div>
             </Item>
