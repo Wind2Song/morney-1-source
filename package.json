@@ -1,6 +1,7 @@
 {
   "name": "morney-1",
   "version": "0.1.0",
+  "homepage": "https://wind2song.github.io/morney-1-website/",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.16.0",
