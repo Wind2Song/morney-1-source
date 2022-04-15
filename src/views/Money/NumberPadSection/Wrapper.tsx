@@ -30,6 +30,10 @@ const Wrapper  = styled.section`
       &:nth-child(12){background: #9a9a9a;}
       &:nth-child(14){background: #a9a9a9;}
     }
+    >button:active{
+      color: white;
+      background: #3c9a84;
+    }
   }
 `;
 
