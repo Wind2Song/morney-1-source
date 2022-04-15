@@ -5,7 +5,6 @@ import { useTags } from 'useTags';
 import Layout from '../components/Layout';
 import { CategorySection } from './Money/CategorySection';
 import day from 'dayjs';
-import { relative } from 'path/posix';
 
 const Item = styled.div`
   display:flex;

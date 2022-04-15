@@ -55,7 +55,7 @@ const useTags = () =>{
         // setTags(tagsClone);
         setTags(tags.filter(tag => tag.id !== id))
     }
-    return {tags, addTag, setTags, findTag, getName, deleteTag, updateTag} //
+    return {tags, addTag, setTags, findTag, getName, deleteTag, updateTag, findIndex} //
 }
 
 export {useTags};

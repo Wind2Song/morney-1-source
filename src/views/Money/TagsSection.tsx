@@ -1,5 +1,3 @@
-import { createID } from "lib/createID";
-// import { useState } from "react";
 import styled from "styled-components";
 import {useTags} from 'useTags'
 const Wrapper  = styled.section`
@@ -13,7 +11,8 @@ const Wrapper  = styled.section`
       display: inline-block;      padding: 3px 18px;
       font-size: 14px;      margin: 8px 12px;
       &.selected{
-        background: #f60;
+        color: #F0F0F0;
+        background: #38A088;
       }
     }
   }

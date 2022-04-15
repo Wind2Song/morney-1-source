@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, NavLink, Redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React from "react";
 import Icon from "./Icon";
 // import  X from 'icons/money.svg';
@@ -35,19 +35,19 @@ const Nav = ()=>{
         <NavWrapper>
             <ul>
                 <li>
-                    <NavLink to="/tags" activeStyle={{color: "red", fill: "red"}}>
+                    <NavLink to="/tags" activeStyle={{color: "#3088A8", fill: "#3088A8"}}>
                         <Icon name="tags"/>
                         标签页
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/money" activeStyle={{color: "red", fill: "red"}}>
+                    <NavLink to="/money" activeStyle={{color: "#38A088", fill: "#3088A8"}}>
                         <Icon name="money"/>
                         记账页
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/statistics" activeStyle={{color: "red", fill: "red"}}>
+                    <NavLink to="/statistics" activeStyle={{color: "#3088A8", fill: "#3088A8"}}>
                         <Icon name="statics"/>
                         统计页
                     </NavLink>
